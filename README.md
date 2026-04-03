@@ -1,4 +1,4 @@
-# NLP Data Characterization: Hate Speech Detection Insights
+# Hate Speech Characterization: NLP Feature Extraction
 
 Este proyecto desarrolla un pipeline de análisis de lenguaje natural (NLP) para caracterizar y diferenciar patrones lingüísticos entre discursos de odio y mensajes neutrales. El análisis se centra en la extracción de características morfológicas, entidades nombradas (NER) y métricas léxicas utilizando **spaCy**.
 
@@ -20,8 +20,13 @@ Identificar rasgos estadísticos y lingüísticos que permitan optimizar futuros
 - **Vocabulario:** Se identificaron patrones de insultos altamente repetitivos frente a la mayor variabilidad léxica del discurso informativo.
 
 ## Estructura del Proyecto
-- `caracteristicasOdio.ipynb`: Notebook principal con el análisis completo y visualizaciones.
-- `requirements.txt`: Dependencias necesarias para la ejecución.
+
+* `notebooks/`: Notebook principal con el análisis completo y visualizaciones (`hate_speech_analysis.ipynb`).
+* `reports/`: Outputs relevantes:
+    * `data/`: Los listados técnicos (CSV) de frecuencias y palabras exclusivas.
+    * `figures/`: El dashboard visual y las gráficas comparativas.
+* `DATA_DICTIONARY.md`: Especificaciones del conjunto de datos.
+* `requirements.txt`: Dependencias necesarias para la ejecución.
 
 ## Stack Técnico
 - **Lenguaje:** Python 3.x

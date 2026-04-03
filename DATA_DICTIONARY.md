@@ -14,8 +14,8 @@ Este repositorio utiliza datos recabados en el marco del proyecto **Hatemedia (P
 
 | Recurso | Descripción | Enlace |
 | :--- | :--- | :--- |
-| **Datos Brutos (Raw)** | Dataset original sin procesar (+570k registros). | [Descargar aquí](https://www.google.com/search?q=%23) \* |
-| **Datos Procesados** | Dataset tras limpieza de caracteres, normalización y filtrado. | [Ver en repositorio](https://www.google.com/search?q=./reports/data/) |
+| **Datos Brutos (Raw)** | Dataset original sin procesar (+570k registros). | [Descargar aquí](https://drive.google.com/file/d/1b0jnGLV3Uw8Ok9NtijJxqE8WcTWdhxZJ/view?usp=sharing) \* |
+| **Datos Procesados** | Dataset tras limpieza de caracteres, normalización y filtrado. | [Ver carpeta](https://drive.google.com/drive/folders/11uQOBM1X73VSfuyJ6KxTVbjc7gJkJKUk?usp=sharing) |
 
 -----
 
