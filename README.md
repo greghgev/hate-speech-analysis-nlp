@@ -23,7 +23,7 @@ Identificar rasgos estadísticos y lingüísticos que permitan optimizar futuros
 
 * `notebooks/`: Notebook principal con el análisis completo y visualizaciones (`hate_speech_analysis.ipynb`).
 * `reports/`: Outputs relevantes:
-    * `data/`: Los listados técnicos (CSV) de frecuencias y palabras exclusivas.
+    * `tables/`: Los listados técnicos (CSV) de frecuencias y palabras exclusivas.
     * `figures/`: El dashboard visual y las gráficas comparativas.
 * `DATA_DICTIONARY.md`: Especificaciones del conjunto de datos.
 * `requirements.txt`: Dependencias necesarias para la ejecución.
