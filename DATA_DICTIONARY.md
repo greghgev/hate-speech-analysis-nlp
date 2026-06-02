@@ -8,7 +8,6 @@ Este repositorio utiliza datos recabados en el marco del proyecto **Hatemedia (P
   * **Metodología de recolección:** [Informe final de scrapeo (DOI)](https://doi.org/10.6084/m9.figshare.25187591.v2)
   * **Web oficial:** [https://www.hatemedia.es/](https://www.hatemedia.es/)
 
------
 
 ## 2\. Recursos y Descargas
 
@@ -17,11 +16,10 @@ Este repositorio utiliza datos recabados en el marco del proyecto **Hatemedia (P
 | **Datos Brutos (Raw)** | Dataset original sin procesar (+570k registros). | [Descargar aquí](https://drive.google.com/file/d/1b0jnGLV3Uw8Ok9NtijJxqE8WcTWdhxZJ/view?usp=sharing) \* |
 | **Datos Procesados** | Dataset tras limpieza de caracteres, normalización y filtrado. | [Ver carpeta](https://drive.google.com/drive/folders/11uQOBM1X73VSfuyJ6KxTVbjc7gJkJKUk?usp=sharing) |
 
------
 
 ## 3\. Estructura de los Datos
 
-El pipeline de este proyecto transforma los datos originales en los siguientes niveles:
+Evolución de los datos durante el proyecto:
 
 ### A. Dataset Original (`Raw`)
 
@@ -38,7 +36,6 @@ Versión optimizada para análisis de NLP:
 1.  **Limpieza:** Corrección de *mojibake*, normalización Unicode (NFKC) y eliminación de ruido mediante Regex.
 2.  **Submuestreo:** Reducción estratificada del volumen para garantizar representatividad estadística y eficiencia computacional.
 
------
 
 ## 4\. Artefactos de Análisis
 
@@ -52,6 +49,3 @@ Resultados derivados disponibles en...
 ... la carpeta `/reports/data/figures/`:
 
   * `dashboard_analisis_odio.csv`: Conclusiones finales más relevantes.
-
-
------

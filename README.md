@@ -1,35 +1,44 @@
 # Hate Speech Characterization: NLP Feature Extraction
 
-Este proyecto desarrolla un pipeline de análisis de lenguaje natural (NLP) para caracterizar y diferenciar patrones lingüísticos entre discursos de odio y mensajes neutrales. El análisis se centra en la extracción de características morfológicas, entidades nombradas (NER) y métricas léxicas utilizando **spaCy**.
+Este proyecto desarrolla un pipeline de análisis de lenguaje natural (NLP) estructurado en fases para caracterizar y diferenciar patrones lingüísticos entre discursos de odio y mensajes neutrales. El análisis se centra en la extracción de características morfosintácticas, entidades nombradas (NER) y métricas léxicas avanzadas utilizando **spaCy**.
 
 ## Objetivo
-Identificar rasgos estadísticos y lingüísticos que permitan optimizar futuros modelos de clasificación de texto.
+Identificar de forma analítica y estadística rasgos lingüísticos estructurales que permitan optimizar futuros modelos de Machine Learning para la clasificación de texto.
 
-## Pipeline de Trabajo
-1. **Data Cleaning & Normalization:** Tratamiento de *mojibake*, normalización Unicode (NFC), eliminación de ruido específico de usuarios y limpieza de caracteres especiales.
-2. **Sampling Estratificado:** Gestión de datasets de gran volumen (>570k registros) asegurando la representatividad de las clases.
-3. **Extracción de Features:**
-   - Análisis morfológico (Género/Número/POS tagging).
-   - Detección de Entidades Nombradas (NER) para identificación de targets de odio.
-   - Análisis de densidad léxica y stopwords.
-4. **Visualización Avanzada:** Dashboard integrado de métricas para comparación de clases.
+## Arquitectura del Pipeline (Modular)
+Para optimizar recursos y facilitar la trazabilidad del dato, el desarrollo se ha estructurado en 5 fases secuenciales e independientes:
+
+1. **Ingesta y Preprocesamiento:** Carga de >570k registros, tratamiento de codificación (*mojibake*), normalización Unicode (NFC), y limpieza algorítmica mediante expresiones regulares (`re`).
+2. **Análisis Morfosintáctico:** Aplicación del pipeline industrial de spaCy para la extracción de features (POS tagging, lemas, densidad de sustantivos/adjetivos, distribuciones de género y número).
+3. **Reconocimiento NER:** Detección de Entidades Nombradas para la identificación de *targets* u objetivos (Personas, Organizaciones, Localizaciones).
+4. **Análisis Estadístico:** Cálculo de densidad léxica, proporciones estructurales (palabras/oraciones) e intersección de diccionarios de lemas.
+5. **Dashboard Visual:** Renderizado de métricas y comparativas de clases mediante visualización avanzada.
 
 ## Hallazgos Clave
-- **Longitud y Estructura:** El discurso de odio tiende a ser significativamente más corto y directo, con una menor complejidad sintáctica.
-- **Entidades (NER):** Los textos neutrales presentan una mayor densidad de entidades de localización y organizaciones, mientras que el discurso de odio se concentra en términos de identidad personal.
-- **Vocabulario:** Se identificaron patrones de insultos altamente repetitivos frente a la mayor variabilidad léxica del discurso informativo.
+- **Estructura Directa:** El discurso de odio analizado es significativamente más corto, directo y de menor complejidad sintáctica. No es argumentativo, sino punzante.
+- **Focalización Personal (NER):** Mientras el discurso neutro contextualiza geográficamente (LOC), el discurso hostil se centra obsesivamente en individuos concretos (PER).
+- **Sesgo Morfosintáctico:** Existe un repunte asimétrico en el uso del Femenino Singular en contextos de odio, sugiriendo patrones de misoginia dirigida.
+- **Polarización y Léxico:** El vocabulario hostil, más allá de los insultos, se instrumentaliza fuertemente a través de la polarización ideológico-política.
 
-## Estructura del Proyecto
+## Estructura del Repositorio
 
-* `notebooks/`: Notebook principal con el análisis completo y visualizaciones (`hate_speech_analysis.ipynb`).
-* `reports/`: Outputs relevantes:
-    * `tables/`: Los listados técnicos (CSV) de frecuencias y palabras exclusivas.
-    * `figures/`: El dashboard visual y las gráficas comparativas.
-* `DATA_DICTIONARY.md`: Especificaciones del conjunto de datos.
-* `requirements.txt`: Dependencias necesarias para la ejecución.
+* `data/`: Almacenamiento estructurado del dato (no incluido en control de versiones para los datasets pesados).
+    * `raw/`: Datos originales.
+    * `processed/`: Datasets procesados.
+* `notebooks/`: Pipeline de ejecución:
+    * `01_Ingesta_y_Preprocesamiento.ipynb`
+    * `02_Analisis_Morfosintactico.ipynb`
+    * `03_Reconocimiento_NER.ipynb`
+    * `04_Analisis_Estadistico.ipynb`
+    * `05_Dashboard_y_Conclusiones.ipynb`
+* `reports/`: Artefactos generados por el análisis:
+    * `tables/`: Listados técnicos (CSV) de frecuencias y palabras exclusivas.
+    * `figures/`: El dashboard visual y gráficas individuales de los *insights*.
+* `DATA_DICTIONARY.md`: Especificaciones completas del conjunto de datos.
+* `requirements.txt`: Dependencias necesarias para la reproducción del entorno.
 
 ## Stack Técnico
-- **Lenguaje:** Python 3.x
+- **Lenguaje:** Python 3.10
 - **NLP Engine:** [spaCy](https://spacy.io/) (Modelo `es_core_news_md`)
-- **Procesamiento de Datos:** Pandas, NumPy
-- **Visualización:** Matplotlib (Gridspec), WordCloud, Tabulate
+- **Ingeniería de Datos:** Pandas, NumPy, Regex (`re`)
+- **Visualización:** Matplotlib, Seaborn, WordCloud
