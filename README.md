@@ -22,9 +22,6 @@ Para optimizar recursos y facilitar la trazabilidad del dato, el desarrollo se h
 
 ## Estructura del Repositorio
 
-* `data/`: Almacenamiento estructurado del dato (no incluido en control de versiones para los datasets pesados).
-    * `raw/`: Datos originales.
-    * `processed/`: Datasets procesados.
 * `notebooks/`: Pipeline de ejecución:
     * `01_Ingesta_y_Preprocesamiento.ipynb`
     * `02_Analisis_Morfosintactico.ipynb`
@@ -35,7 +32,8 @@ Para optimizar recursos y facilitar la trazabilidad del dato, el desarrollo se h
     * `tables/`: Listados técnicos (CSV) de frecuencias y palabras exclusivas.
     * `figures/`: El dashboard visual y gráficas individuales de los *insights*.
 * `DATA_DICTIONARY.md`: Especificaciones completas del conjunto de datos.
-* `requirements.txt`: Dependencias necesarias para la reproducción del entorno.
+* `README.md`
+* `requirements.txt`
 
 ## Stack Técnico
 - **Lenguaje:** Python 3.10
